@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Backup Storage Bucket
+
+Resources:
+  BackupStorageBucket:
+    Type: AWS::S3::Bucket
+    Properties: {}
+
+Outputs:
+  BackupStorageBucketName:
+    Description: Storage bucket for database backup
+    Value: !Ref BackupStorageBucket
+    Export:
+      Name: !Sub "${AWS::StackName}-BackupStorageBucketName"
